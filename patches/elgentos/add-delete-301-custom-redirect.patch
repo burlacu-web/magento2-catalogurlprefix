@@ -1,0 +1,14 @@
+--- src/Service/RegenerateProductUrl.php	2022-04-14 18:37:59.000000000 +0100
++++ src/Service/RegenerateProductUrl.php	2022-05-25 19:31:00.000000000 +0100
+@@ -227,5 +227,11 @@
+             UrlRewrite::REDIRECT_TYPE => 0,
+             UrlRewrite::STORE_ID      => $store->getId()
+         ]);
++
++        $this->urlPersist->deleteByData([
++            UrlRewrite::ENTITY_ID     => $productIds,
++            UrlRewrite::ENTITY_TYPE   => \Array42\CatalogUrlPrefix\Model\Config::PERMANENT_REDIRECT_ENTITY_TYPE,
++            UrlRewrite::STORE_ID      => $store->getId()
++        ]);
+     }
+ }

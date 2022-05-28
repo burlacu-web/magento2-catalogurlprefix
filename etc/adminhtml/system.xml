@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="catalog">
+            <group id="seo">
+                <field id="product_url_prefix" type="text" sortOrder="32" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1" translate="label">
+                    <label>Product URL Prefix</label>
+                    <comment>This field accepts slashes, so you you want to place a slash in the URL, you can (i.e: "product/"). You need to refresh the cache and regenarate the URL's manually.</comment>
+                </field>
+                <field id="generate_nonprefix_301_redirect" type="select" sortOrder="33" showInWebsite="1" showInStore="1" showInDefault="1" canRestore="1" translate="label">
+                    <label>Generate permanent redirect from the old url without prefix to new URL with the prefix</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>It will create a 301 redirect to the new prefixed URL (i.e: https://example.com/url-key to https://example.com/url_prefix/url-key). You need to refresh the cache and regenarate the URL's manually.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

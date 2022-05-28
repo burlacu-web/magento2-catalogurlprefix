@@ -1,0 +1,31 @@
+{
+    "name": "array42/module-catalogurlprefix",
+    "description": "Add a URL prefix to the product and category url (i.e.: \"product/\")",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Tiago Sampaio",
+            "email": "tiagosampaio@array42.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "elgentos/regenerate-catalog-urls": "^0.3.3"
+    },
+    "extra": {
+        "patches": {
+            "elgentos/regenerate-catalog-urls": {
+                "Add startup configuration for PHP server": "./patches/elgentos/add-delete-301-custom-redirect.patch"
+            }
+        }
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Array42\\CatalogUrlPrefix\\": ""
+        }
+    }
+}

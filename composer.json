@@ -11,8 +11,8 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "cweagans/composer-patches": "^1.7",
-        "elgentos/regenerate-catalog-urls": "^0.3.3"
+        "cweagans/composer-patches": "*",
+        "elgentos/regenerate-catalog-urls": "*"
     },
     "extra": {
         "patches": {

@@ -53,6 +53,11 @@ class ProductUrlPathGenerator
      */
     public function getUrlPathWithPrefix($urlPath, $storeId): string
     {
+        $productPrefixUrl = $this->config->getCatalogUrlPrefix($storeId);
+        if (substr($urlPath, 0, strlen($productPrefixUrl)) == $productPrefixUrl) {
+            return $urlPath; // No need to add prefix if it already exists
+        }
+
         return $this->config->getCatalogUrlPrefix($storeId) . $urlPath;
     }
 }
